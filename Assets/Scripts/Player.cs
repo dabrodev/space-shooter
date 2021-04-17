@@ -27,5 +27,7 @@ public class Player : MonoBehaviour
 
         transform.Translate(direction * _speed * Time.deltaTime);
 
+        // testing the dev branch and merge with master
+
     }
 }
