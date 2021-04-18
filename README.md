@@ -16,7 +16,7 @@ For code blocks use triple backtics
 
 ## Links
 
-Have a look at my portfolio [my portfolio](https://dabro.dev/).
+Have a look at [my portfolio](https://dabro.dev/).
 
 
 
