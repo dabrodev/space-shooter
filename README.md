@@ -4,7 +4,7 @@
 
 ### Added basic movement
 
-##Formatting syntax
+## Formatting syntax
 
 For code blocks use triple backtics 
 
