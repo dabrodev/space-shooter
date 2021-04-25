@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private float _speed = 3.5f;
+
+    Vector3 myPosition;
  
 
     // Start is called before the first frame update
@@ -27,7 +29,24 @@ public class Player : MonoBehaviour
 
         transform.Translate(direction * _speed * Time.deltaTime);
 
-        // testing the dev branch and merge with master
+        // if player horizontal position x is 9 or greater
+        // the position.x = 9.26f
+        //the same for x=-9.26f
+        // if player vertical position y is 6 or -4
+        // set the position.y accordinlgly to y=6 or y=-4
+
+        if (transform.position.x >= 9.26f ) {
+            transform.position = new Vector3(9.26f, transform.position.y, 0);
+        } 
+        else if (transform.position.x <=-9.26f) {
+            transform.position = new Vector3(-9.26f, transform.position.y, 0);
+        } 
+        else if (transform.position.y >= 6) {
+            transform.position = new Vector3(transform.position.x, 6, 0);
+        }
+        else if (transform.position.y <= -4) {
+            transform.position = new Vector3(transform.position.x, -4, 0);
+        }
 
     }
 }
