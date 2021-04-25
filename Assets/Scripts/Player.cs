@@ -15,11 +15,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       CalculateMovement();
+       TeleportMovement();
 
     }
 
-    void CalculateMovement() {
+    void TeleportMovement() {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
@@ -51,7 +51,8 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 6.5f, 0);
         }
         
-        
+    }
+    void RestrictMovement() {   
         // restrict player movement
         //transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.26f,9.26f), Mathf.Clamp(transform.position.y, -4.0f,6.0f), 0);
     }
