@@ -5,7 +5,7 @@ using UnityEngine;
 [SerializeField]
 public class Laser : MonoBehaviour
 {
-    private float _speed = 3.5f;
+    private float _speed = 8.0f;
     // Start is called before the first frame update
     void Start()
     {
