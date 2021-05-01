@@ -8,6 +8,8 @@ public class Player : MonoBehaviour
     private float _speed = 3.5f;
     [SerializeField]
     private GameObject _laserPrefab;
+    [SerializeField]
+    private Vector3 _laserOffset = new Vector3(0,0.8f,0);
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +22,8 @@ public class Player : MonoBehaviour
     {
         PlayerMovement();
         PlayerTeleport();
+        PlayerLaser();
 
-        // If I hit space key
-        // spawn an object
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Instantiate(_laserPrefab, transform.position, Quaternion.identity);
-        }
     }
 
     void PlayerMovement() {
@@ -54,7 +51,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(-10.0f, transform.position.y, 0);
         } 
         else if (transform.position.x <=-10.0f) {
-            transform.position = new Vector3(10.0f, transform.position.y, 0);
+            transform.position = new Vector3(10.0f, transform.position.y , 0);
         } 
         else if (transform.position.y >= 6.5f) {
             transform.position = new Vector3(transform.position.x, -4.5f, 0);
@@ -67,4 +64,14 @@ public class Player : MonoBehaviour
     void RestrictMovement() {   
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.26f,9.26f), Mathf.Clamp(transform.position.y, -4.0f,6.0f), 0);
     }
+
+    void PlayerLaser() {       
+        
+        // If I hit space key
+        // spawn an object
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Instantiate(_laserPrefab, transform.position + _laserOffset, Quaternion.identity);
+        }
+    }    
 }
