@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     private float _enemySpeed = 4.0f;
 
+
     void Start()
     {
          
@@ -19,6 +20,30 @@ public class Enemy : MonoBehaviour
         {
             float randomX = Random.Range(-9.5f, 9.5f);
             transform.position = new Vector3(randomX, 11, 0);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //if other is Player
+        //damage the player
+        //Destroy Us
+
+        if (other.tag == "Player")
+        {
+           
+            Destroy(this.gameObject);
+
+        }
+
+        //if other is laser
+        //laser
+        //destroy us
+
+        if (other.tag == "Laser")
+        {
+            Destroy(other.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
