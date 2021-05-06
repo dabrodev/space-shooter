@@ -25,20 +25,13 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if other is Player
-        //damage the player
-        //Destroy Us
 
         if (other.tag == "Player")
         {
            
             Destroy(this.gameObject);
-
         }
 
-        //if other is laser
-        //laser
-        //destroy us
 
         if (other.tag == "Laser")
         {
