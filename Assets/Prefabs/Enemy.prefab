@@ -109,8 +109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91cbc28987e47d59d896c90ac0496b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _laser: {fileID: 0}
 --- !u!54 &-1761845470547984057
 Rigidbody:
   m_ObjectHideFlags: 0
