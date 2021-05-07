@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float _enemySpeed = 4.0f;
+    [SerializeField]
+    private float _speed = 4.0f;
 
 
     void Start()
@@ -14,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.down * _enemySpeed * Time.deltaTime); 
+        transform.Translate(Vector3.down * _speed * Time.deltaTime); 
 
         if (transform.position.y < -6.0f) 
         {
@@ -28,8 +29,6 @@ public class Enemy : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            //damage player
-
             Player player = other.transform.GetComponent<Player>();
 
             if (player != null)
