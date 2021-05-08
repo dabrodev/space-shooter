@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.down * _speed * Time.deltaTime); 
+        transform.Translate(Vector3.down * _speed * Time.deltaTime);
 
         if (transform.position.y < -6.0f) 
         {
@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
         {
             Player player = other.transform.GetComponent<Player>();
@@ -37,7 +36,6 @@ public class Enemy : MonoBehaviour
             
             Destroy(this.gameObject);
         }
-
 
         if (other.tag == "Laser")
         {
