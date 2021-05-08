@@ -18,7 +18,6 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-
     // spawn game objects every 5 seconds
     // Create a coroutine of type IEnumerator -- Yield Events
     // while loop
@@ -27,9 +26,11 @@ public class SpawnManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5.0f);
             float randomX = Random.Range(-9.5f, 9.5f);
-            Instantiate(_enemyPrefab, new Vector3(randomX, 11, 0), Quaternion.identity);
+            Vector3 posToSpawn = new Vector3(randomX, 7, 0);
+            Instantiate(_enemyPrefab, posToSpawn, Quaternion.identity);
+            yield return new WaitForSeconds(5.0f);
+           
         }
     }
 }
