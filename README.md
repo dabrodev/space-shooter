@@ -2,7 +2,7 @@
 
 ## 2D Game for desktop and mobile - more coming soon.
 
-### Added basic movement
+### From prototype to the real gameplay.
 
 ## Formatting syntax
 
