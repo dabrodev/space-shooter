@@ -4,7 +4,7 @@
 
 ### From prototype to the real gameplay.
 
-## Formatting syntax
+## 2D Space Shooter
 
 For code blocks use triple backtics 
 
