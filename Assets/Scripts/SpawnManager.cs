@@ -10,21 +10,10 @@ public class SpawnManager : MonoBehaviour
     private GameObject _enemyContainer;
     private bool _stopSpawning = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnRoutine());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    // spawn game objects every 5 seconds
-    // Create a coroutine of type IEnumerator -- Yield Events
-    // while loop
 
     IEnumerator SpawnRoutine()
     {
