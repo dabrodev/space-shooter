@@ -6,7 +6,7 @@
 
 ## 2D Space Shooter
 
-For code blocks use triple backtics 
+Game-based Learning
 
 ```
 #The largest heading
