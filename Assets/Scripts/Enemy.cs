@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Player")
         {
             Player player = other.transform.GetComponent<Player>();
-            Debug.Log("Trigger working for Player");
 
             if (player != null)
             {
