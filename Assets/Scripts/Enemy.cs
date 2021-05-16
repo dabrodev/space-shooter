@@ -18,11 +18,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2d(Collider other)
     {
         if (other.tag == "Player")
         {
             Player player = other.transform.GetComponent<Player>();
+            Debug.Log("Trigger working for Player");
 
             if (player != null)
             {
