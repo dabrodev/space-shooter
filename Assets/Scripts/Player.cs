@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         PlayerMovement();
-        PlayerTeleport();
+        RestrictMovement();
         PlayerLaser();
     }
 
