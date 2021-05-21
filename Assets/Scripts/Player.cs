@@ -21,7 +21,6 @@ public class Player : MonoBehaviour
     [SerializeField]
     private bool _isTripleShotActive = false;
 
-
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
@@ -49,6 +48,7 @@ public class Player : MonoBehaviour
 
         transform.Translate(direction * _speed * Time.deltaTime);
     }
+
     void PlayerTeleport() 
     {
         if (transform.position.x >= 10.0f )
@@ -84,8 +84,6 @@ public class Player : MonoBehaviour
             {
                 Instantiate(_laserPrefab, transform.position + _laserOffset, Quaternion.identity);
             }
-            
-            
         }
     }
 
