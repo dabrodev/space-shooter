@@ -31,7 +31,10 @@ public class Powerup : MonoBehaviour
         if (collision.tag == "Player")
         {
             Player player = collision.transform.GetComponent<Player>();
-            player.TripleShotActive();
+            if (player != null)
+            {
+                player.TripleShotActive();
+            }
             Destroy(this.gameObject);
         }
     }
