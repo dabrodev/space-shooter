@@ -28,9 +28,10 @@ public class Powerup : MonoBehaviour
     //on collected, destroy
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player");
+        if (collision.tag == "Player")
         {
-            
+            Player player = collision.transform.GetComponent<Player>();
+            player.TripleShotActive();
             Destroy(this.gameObject);
         }
     }

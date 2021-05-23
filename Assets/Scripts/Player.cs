@@ -98,4 +98,21 @@ public class Player : MonoBehaviour
             
         }
     }
+
+    public void TripleShotActive()
+    {
+        _isTripleShotActive = true;
+        // start powerup coroutine for
+        StartCoroutine(TripleShotPowerdownCoroutine());
+    }
+
+    //IEnumerator TripleShotPowerdownCoroutine
+    //Wait5seconds
+    //Set TripleShot to false
+
+    IEnumerator TripleShotPowerdownCoroutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isTripleShotActive = false;
+    }
 }
