@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnPowerupRoutine() {
         while (_stopSpawning == false)
         {
-            float randomFreq = Random.Range(3.0f, 7.0f);
+            float randomFreq = Random.Range(3.0f, 8.0f);
             float randomX = Random.Range(-9.5f, 9.5f);
             Vector3 posToSpawn = new Vector3(randomX, 7, 0);
             GameObject newPowerup = Instantiate(_powerupPrefab, posToSpawn, Quaternion.identity);
