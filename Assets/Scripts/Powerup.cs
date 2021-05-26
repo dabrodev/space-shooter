@@ -32,8 +32,11 @@ public class Powerup : MonoBehaviour
                 //if powerup is 0
                 player.TripleShotActive();
                 //else if powerup is 1
+                //
                 //play speed powerup
+                //
                 //else if powerup is 2
+                //
                 //shields powerup
             }
             Destroy(this.gameObject);
