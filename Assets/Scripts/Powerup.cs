@@ -39,7 +39,7 @@ public class Powerup : MonoBehaviour
                 }
                 else if (powerupID == 2)
                 {
-                    Debug.Log("Shields Powerup")
+                    Debug.Log("Shields Powerup");
                 }
                 //else if powerup is 1
                 //
