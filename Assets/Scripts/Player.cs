@@ -102,13 +102,8 @@ public class Player : MonoBehaviour
     public void TripleShotActive()
     {
         _isTripleShotActive = true;
-        // start powerup coroutine for
         StartCoroutine(TripleShotPowerdownCoroutine());
     }
-
-    //IEnumerator TripleShotPowerdownCoroutine
-    //Wait5seconds
-    //Set TripleShot to false
 
     IEnumerator TripleShotPowerdownCoroutine()
     {
