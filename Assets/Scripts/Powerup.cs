@@ -23,20 +23,6 @@ public class Powerup : MonoBehaviour
         if (collision.tag == "Player")
         {
             Player player = collision.transform.GetComponent<Player>();
-            if (player != null)
-            {
-                if (powerupID == 0)
-                {
-                    player.TripleShotActive();
-                }
-                else if (powerupID == 1)
-                {
-                    Debug.Log("Speed Powerup");
-                }
-                else if (powerupID == 2)
-                {
-                    Debug.Log("Shields Powerup");
-                }
 
                 switch (powerupID)
                 {
@@ -53,7 +39,7 @@ public class Powerup : MonoBehaviour
                         Debug.Log("Default Behavior");
                         break;
                 }
-            }
+
             Destroy(this.gameObject);
         }
     }
