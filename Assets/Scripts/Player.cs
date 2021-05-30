@@ -51,6 +51,10 @@ public class Player : MonoBehaviour
         {
             _speed = 18.5f;
         }
+        else
+        {
+            _speed = 3.0f;
+        }
 
         transform.Translate(direction * _speed * Time.deltaTime);
     }
@@ -114,11 +118,18 @@ public class Player : MonoBehaviour
     public void SpeedPowerupActive()
     {
         _isSpeedPowerupActive = true;
+        StartCoroutine(SpeedPowerupCoroutine());
     }
 
     IEnumerator TripleShotPowerdownCoroutine()
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
+    }
+
+    IEnumerator SpeedPowerupCoroutine()
+    {
+        yield return new WaitForSeconds(5.0f);
+        _isSpeedPowerupActive = false;
     }
 }
