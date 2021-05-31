@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed = 3.0f;
     [SerializeField]
+    private float _speedUp = 6.0f;
+    [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
     private GameObject _tripleShotPrefab;
@@ -47,14 +49,6 @@ public class Player : MonoBehaviour
 
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
-        if (_isSpeedPowerupActive == true)
-        {
-            _speed = 18.5f;
-        }
-        else
-        {
-            _speed = 3.0f;
-        }
 
         transform.Translate(direction * _speed * Time.deltaTime);
     }
@@ -118,6 +112,7 @@ public class Player : MonoBehaviour
     public void SpeedPowerupActive()
     {
         _isSpeedPowerupActive = true;
+        _speed *= _speedUp;
         StartCoroutine(SpeedPowerupCoroutine());
     }
 
@@ -125,11 +120,13 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
+        
     }
 
     IEnumerator SpeedPowerupCoroutine()
     {
         yield return new WaitForSeconds(5.0f);
         _isSpeedPowerupActive = false;
+        _speed /= _speedUp;
     }
 }
