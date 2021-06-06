@@ -93,10 +93,18 @@ public class Player : MonoBehaviour
 
     public void Damage()
     {
-        if (_isShieldPowerupActive == false)
+        /* if (_isShieldPowerupActive == false)
+         {
+             _lives--;
+         }} countdown shield   */
+
+        if (_isShieldPowerupActive == true)
         {
-            _lives--;
+            _isShieldPowerupActive = false;
+            return;
         }
+
+        _lives--;
 
         if (_lives < 1)
         {
@@ -122,7 +130,8 @@ public class Player : MonoBehaviour
     public void ShieldPowerupActive()
     {
         _isShieldPowerupActive = true;
-        StartCoroutine(ShieldPowerupCoroutine());
+
+        // StartCoroutine(ShieldPowerupCoroutine()); countdown shield
     }
 
     IEnumerator TripleShotPowerdownCoroutine()
@@ -138,9 +147,11 @@ public class Player : MonoBehaviour
         _isSpeedPowerupActive = false;
         _speed /= _speedUp;
     }
+
+    /*
     IEnumerator ShieldPowerupCoroutine()
     {
         yield return new WaitForSeconds(5.0f);
         _isShieldPowerupActive = false;
-    }
+    } Countdon shield */
 }
