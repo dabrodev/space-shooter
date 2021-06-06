@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _tripleShotPrefab;
     [SerializeField]
+    private GameObject _shieldCloud;
+    [SerializeField]
     private Vector3 _laserOffset = new Vector3(0,1.05f,0);
     [SerializeField]
     private float _fireRate = 0.15f;
@@ -33,6 +35,8 @@ public class Player : MonoBehaviour
         {
             Debug.Log("The Spawn Manager is NULL");
         }
+
+        _shieldCloud.SetActive(false);
     }
 
     void Update()
@@ -101,6 +105,7 @@ public class Player : MonoBehaviour
         if (_isShieldPowerupActive == true)
         {
             _isShieldPowerupActive = false;
+            _shieldCloud.SetActive(false);
             return;
         }
 
@@ -130,6 +135,7 @@ public class Player : MonoBehaviour
     public void ShieldPowerupActive()
     {
         _isShieldPowerupActive = true;
+        _shieldCloud.SetActive(true);
 
         // StartCoroutine(ShieldPowerupCoroutine()); countdown shield
     }
