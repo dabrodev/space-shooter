@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
             Debug.Log("The Spawn Manager is NULL");
         }
 
-        _shieldCloud.SetActive(false);
+       _shieldCloud.SetActive(false);
     }
 
     void Update()
