@@ -53,7 +53,6 @@ public class Player : MonoBehaviour
 
         Vector3 direction = new Vector3(horizontalInput, verticalInput, 0);
 
-
         transform.Translate(direction * _speed * Time.deltaTime);
     }
 
@@ -100,7 +99,7 @@ public class Player : MonoBehaviour
         /* if (_isShieldPowerupActive == false)
          {
              _lives--;
-         }} countdown shield   */
+         }} Limited Time Shield   */
 
         if (_isShieldPowerupActive == true)
         {
@@ -137,7 +136,8 @@ public class Player : MonoBehaviour
         _isShieldPowerupActive = true;
         _shieldCloud.SetActive(true);
 
-        // StartCoroutine(ShieldPowerupCoroutine()); countdown shield
+        // StartCoroutine(ShieldPowerupCoroutine());
+        // Limited Time Shield
     }
 
     IEnumerator TripleShotPowerdownCoroutine()
@@ -159,5 +159,5 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         _isShieldPowerupActive = false;
-    } Countdon shield */
+    } Limited Time Shield */
 }
