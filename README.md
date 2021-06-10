@@ -6,7 +6,6 @@
 
 ## 2D Space Shooter
 
-Game-based Learning by Fun
 
 ```
 #Working on triple shot
