@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private bool _isTripleShotActive = false;
     private bool _isSpeedPowerupActive = false;
     private bool _isShieldPowerupActive = false;
+    // score variable
 
     void Start()
     {
