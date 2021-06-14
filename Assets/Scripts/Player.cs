@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     private bool _isTripleShotActive = false;
     private bool _isSpeedPowerupActive = false;
     private bool _isShieldPowerupActive = false;
+    private int _score;
 
     void Start()
     {
@@ -160,4 +161,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(5.0f);
         _isShieldPowerupActive = false;
     } Limited Time Shield */
+
+    public void CalculateScore()
+    {
+        _score += 10;
+    }
 }
