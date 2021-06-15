@@ -4,7 +4,7 @@
 
 ### From prototype to the real gameplay.
 
-## 2D Space Shooter - Coming soon!
+## 2D Space Shooter
 
 
 ```
