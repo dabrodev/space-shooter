@@ -26,18 +26,26 @@ public class Player : MonoBehaviour
     private bool _isSpeedPowerupActive = false;
     private bool _isShieldPowerupActive = false;
     private int _score;
+    private UIManager _uiManager;
 
     void Start()
     {
         transform.position = new Vector3(0, 0, 0);
         _spawnManager = GameObject.Find("Spawn_Manager").GetComponent<SpawnManager>();
 
+        _shieldCloud.SetActive(false);
+
+        _uiManager = GameObject.Find("Canvas").GetComponent<UIManager>();
+
         if (_spawnManager == null)
         {
             Debug.Log("The Spawn Manager is NULL");
         }
 
-       _shieldCloud.SetActive(false);
+        if (_uiManager == null)
+        {
+            Debug.Log("The Spawn Managr is NULL");
+        }
     }
 
     void Update()
@@ -162,8 +170,10 @@ public class Player : MonoBehaviour
         _isShieldPowerupActive = false;
     } Limited Time Shield */
 
-    public void CalculateScore()
+    public void CalculateScore(int points)
     {
-        _score += 10;
+        _score += points;
+
+        _uiManager.UpdateScore(_score);
     }
 }

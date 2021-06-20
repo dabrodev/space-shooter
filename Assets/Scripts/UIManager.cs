@@ -12,12 +12,12 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         _scoreText.text = "Score: " + 0;
-        // how to access Plater Variable?
+        // how to access Player Variable?
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void UpdateScore(int playerScore)
     {
-        
+        _scoreText.text = "Score: " + playerScore.ToString();
     }
 }

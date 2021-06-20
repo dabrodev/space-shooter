@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
             Destroy(other.gameObject);
             if (_player != null)
             {
-                _player.CalculateScore();
+                _player.CalculateScore(10);
             }
             Destroy(this.gameObject);
         }
