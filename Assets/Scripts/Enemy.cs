@@ -9,6 +9,11 @@ public class Enemy : MonoBehaviour
     private Player _player;
     private Animator _onEnemyDestroy;
     private AudioSource _audioSource;
+    [SerializeField]
+    private GameObject _laserPrefab;
+    private Vector3 _laserOffset = new Vector3(0, -1.05f, 0);
+    private float _fireRate = 3.0f;
+    private float _canFire = -1;
 
     private void Start()
     {
@@ -27,13 +32,35 @@ public class Enemy : MonoBehaviour
         }
 
         _audioSource = GetComponent<AudioSource>();
+
     }
+
 
     void Update()
     {
+        CalculateMovement();
+
+        if (Time.deltaTime > _canFire)
+        {
+            _fireRate = Random.Range(3.0f, 7.0f);
+            _canFire += _fireRate;
+
+            GameObject enemyLaser =  Instantiate(_laserPrefab, transform.position, Quaternion.identity);
+            Laser[] lasers = enemyLaser.GetComponentsInChildren<Laser>();
+
+            for(int i=0; i<lasers.Length; i++)
+            {
+                lasers[i].AssignEnemyLaser();
+            }
+        }
+    }
+
+
+    void CalculateMovement()
+    {
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
 
-        if (transform.position.y < -6.0f) 
+        if (transform.position.y < -6.0f)
         {
             float randomX = Random.Range(-9.5f, 9.5f);
             transform.position = new Vector3(randomX, 11, 0);
