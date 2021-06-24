@@ -8,11 +8,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text _scoreText;
 
-   
     void Start()
     {
         _scoreText.text = "Score: " + 0;
-        
     }
 
 
