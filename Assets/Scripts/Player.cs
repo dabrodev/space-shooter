@@ -122,8 +122,7 @@ public class Player : MonoBehaviour
         if (_lives < 1)
         {
             _spawnManager.OnPlayerDeath();
-            Destroy(this.gameObject);
-            
+            Destroy(this.gameObject); 
         }
     }
 
@@ -153,7 +152,6 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(5.0f);
         _isTripleShotActive = false;
-        
     }
 
     IEnumerator SpeedPowerupCoroutine()
