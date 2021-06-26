@@ -90,7 +90,6 @@ public class Player : MonoBehaviour
     {       
         if (Input.GetKey(KeyCode.Space) && Time.time > _nextFire)  
         {
-            
             _nextFire = Time.time + _fireRate;
 
             if (_isTripleShotActive == true)

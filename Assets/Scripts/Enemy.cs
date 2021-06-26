@@ -13,7 +13,6 @@ public class Enemy : MonoBehaviour
         _player = GameObject.Find("Player").GetComponent<Player>();
     }
 
-
     void Update()
     {
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
