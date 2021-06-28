@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
         _scoreText.text = "Score: " + 0;
     }
 
+
     public void UpdateScore(int playerScore)
     {
         _scoreText.text = "Score: " + playerScore.ToString();
