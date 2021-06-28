@@ -22,4 +22,9 @@ public class UIManager : MonoBehaviour
     {
         _scoreText.text = "Score: " + playerScore.ToString();
     }
+
+    public void UpdateLives(int currentLives)
+    {
+        _livesImg.sprite = _liveSprites[currentLives];
+    }
 }
