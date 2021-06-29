@@ -10,11 +10,14 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image _livesImg;
     [SerializeField]
+    private Text _gameOver;
+    [SerializeField]
     private Sprite[] _liveSprites;
 
     void Start()
     {
         _scoreText.text = "Score: " + 0;
+        _gameOver.gameObject.SetActive(false);
     }
 
 
@@ -26,5 +29,10 @@ public class UIManager : MonoBehaviour
     public void UpdateLives(int currentLives)
     {
         _livesImg.sprite = _liveSprites[currentLives];
+    }
+
+    public void DisplayGameOver()
+    {
+        _gameOver.gameObject.SetActive(true);
     }
 }
