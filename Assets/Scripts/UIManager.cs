@@ -13,6 +13,8 @@ public class UIManager : MonoBehaviour
     private Text _gameOver;
     [SerializeField]
     private Sprite[] _liveSprites;
+    private bool _gamePlay = true;
+    private bool _switcher;
 
     void Start()
     {
@@ -33,6 +35,20 @@ public class UIManager : MonoBehaviour
 
     public void DisplayGameOver()
     {
-        _gameOver.gameObject.SetActive(true);
+        _gamePlay = false;
+        StartCoroutine(GameOverFlicker());
+    }
+
+    IEnumerator GameOverFlicker()
+    {
+        Debug.Log("Started.");
+        while(_gamePlay == false)
+        {
+            _switcher = !_switcher;
+            _gameOver.gameObject.SetActive(_switcher);
+            yield return new WaitForSeconds(0.2f);
+            
+          
+        }    
     }
 }
