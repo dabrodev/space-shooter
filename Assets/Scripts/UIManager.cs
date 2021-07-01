@@ -47,8 +47,6 @@ public class UIManager : MonoBehaviour
             _switcher = !_switcher;
             _gameOver.gameObject.SetActive(_switcher);
             yield return new WaitForSeconds(0.2f);
-            
-          
         }    
     }
 }
