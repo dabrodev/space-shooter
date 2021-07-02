@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
         transform.Translate(direction * _speed * Time.deltaTime);
     }
 
+ 
     void PlayerTeleport() 
     {
         if (transform.position.x >= 10.0f )
@@ -125,6 +126,7 @@ public class Player : MonoBehaviour
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
             _uiManager.DisplayGameOver();
+            _uiManager.RestartLevel();
         }
     }
 

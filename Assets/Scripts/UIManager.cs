@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text _gameOver;
     [SerializeField]
+    private Text _restartGame;
+    [SerializeField]
     private Sprite[] _liveSprites;
     private bool _gamePlay = true;
     private bool _switcher;
@@ -20,8 +23,13 @@ public class UIManager : MonoBehaviour
     {
         _scoreText.text = "Score: " + 0;
         _gameOver.gameObject.SetActive(false);
+        _restartGame.gameObject.SetActive(false);
     }
 
+    void Update()
+    {
+        RestartLevel();
+    }
 
     public void UpdateScore(int playerScore)
     {
@@ -37,6 +45,7 @@ public class UIManager : MonoBehaviour
     {
         _gamePlay = false;
         StartCoroutine(GameOverFlicker());
+        _restartGame.gameObject.SetActive(true);
     }
 
     IEnumerator GameOverFlicker()
@@ -48,5 +57,13 @@ public class UIManager : MonoBehaviour
             _gameOver.gameObject.SetActive(_switcher);
             yield return new WaitForSeconds(0.2f);
         }    
+    }
+
+    public void RestartLevel()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }
