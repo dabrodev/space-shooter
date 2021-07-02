@@ -26,11 +26,6 @@ public class UIManager : MonoBehaviour
         _restartGame.gameObject.SetActive(false);
     }
 
-    void Update()
-    {
-        RestartLevel();
-    }
-
     public void UpdateScore(int playerScore)
     {
         _scoreText.text = "Score: " + playerScore.ToString();
@@ -57,13 +52,5 @@ public class UIManager : MonoBehaviour
             _gameOver.gameObject.SetActive(_switcher);
             yield return new WaitForSeconds(0.2f);
         }    
-    }
-
-    public void RestartLevel()
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Game");
-        }
     }
 }

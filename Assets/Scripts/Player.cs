@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     private bool _isShieldPowerupActive = false;
     private int _score;
     private UIManager _uiManager;
+    private GameManager _gameManager;
 
     void Start()
     {
@@ -45,6 +46,13 @@ public class Player : MonoBehaviour
         if (_uiManager == null)
         {
             Debug.Log("The Spawn Managr is NULL");
+        }
+
+        _gameManager = GameObject.Find("Game_Manager").GetComponent<GameManager>();
+
+        if (_gameManager == null)
+        {
+            Debug.Log("The Game Manager is NULL");
         }
     }
 
@@ -126,7 +134,7 @@ public class Player : MonoBehaviour
             _spawnManager.OnPlayerDeath();
             Destroy(this.gameObject);
             _uiManager.DisplayGameOver();
-            _uiManager.RestartLevel();
+            _gameManager.SetGameOver();
         }
     }
 
