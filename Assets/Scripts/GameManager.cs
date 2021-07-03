@@ -7,13 +7,11 @@ public class GameManager : MonoBehaviour
 {
     private bool _isGameOver;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         RestartGame();
@@ -31,6 +29,5 @@ public class GameManager : MonoBehaviour
     {
         _isGameOver = true;
     }
-
 
 }
