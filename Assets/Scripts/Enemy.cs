@@ -13,7 +13,17 @@ public class Enemy : MonoBehaviour
     {
         _player = GameObject.Find("Player").GetComponent<Player>();
 
+        if (_player == null)
+        {
+            Debug.Log("The player is NULL");
+        }
+
         _onEnemyDestroy = gameObject.GetComponent<Animator>();
+
+        if (_onEnemyDestroy == null)
+        {
+            Debug.LogError("The animator is NULL");
+        }
     }
 
     void Update()

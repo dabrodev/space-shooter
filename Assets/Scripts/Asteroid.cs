@@ -16,8 +16,10 @@ public class Asteroid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.down * _speed * Time.deltaTime, Space.World);
-        transform.Rotate(0, 0, 10 * _smooth * Time.deltaTime, Space.World);
+        //transform.Translate(Vector3.down * _speed * Time.deltaTime, Space.World);
+        //transform.Rotate(0, 0, 10 * _smooth * Time.deltaTime, Space.World);
+
+        transform.Rotate(Vector3.forward * _speed * Time.deltaTime);
        
     }
 }
