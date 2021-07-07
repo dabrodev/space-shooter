@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _shieldCloud;
     [SerializeField]
+    private GameObject _damageREngine;
+    [SerializeField]
+    private GameObject _damageLEngine;
+    [SerializeField]
     private Vector3 _laserOffset = new Vector3(0,1.05f,0);
     [SerializeField]
     private float _fireRate = 0.15f;
@@ -54,6 +58,9 @@ public class Player : MonoBehaviour
         {
             Debug.Log("The Game Manager is NULL");
         }
+
+        _damageLEngine.SetActive(false);
+        _damageREngine.SetActive(false);
     }
 
     void Update()
@@ -128,6 +135,16 @@ public class Player : MonoBehaviour
         _lives--;
 
         _uiManager.UpdateLives(_lives);
+
+        if (_lives == 2)
+        {
+            _damageREngine.SetActive(true);
+        }
+
+        else if (_lives == 1)
+        {
+            _damageLEngine.SetActive(true);
+        }
 
         if (_lives < 1)
         {
