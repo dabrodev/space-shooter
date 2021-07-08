@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed = 3.0f;
     [SerializeField]
-    private float _speedUp = 6.0f;
+    private float _speedUp = 3.0f;
     [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
@@ -165,7 +165,11 @@ public class Player : MonoBehaviour
     {
         _isSpeedPowerupActive = true;
         _speed *= _speedUp;
-        StartCoroutine(SpeedPowerupCoroutine());
+
+        if (_isSpeedPowerupActive == true)
+        {
+            StartCoroutine(SpeedPowerupCoroutine());
+        }
     }
 
     public void ShieldPowerupActive()
