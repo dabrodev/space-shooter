@@ -5,7 +5,7 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
 
-    private float _speed = 4.0f;
+    private float _speed = 8.0f;
     //private float _smooth = 20.0f;
     [SerializeField]
     private GameObject _explosionPrefab;
