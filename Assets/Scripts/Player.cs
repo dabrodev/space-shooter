@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     }
     void RestrictMovement() 
     {   
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -9.26f,9.26f), Mathf.Clamp(transform.position.y, -4.0f,6.0f), 0);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7.6f,7.6f), Mathf.Clamp(transform.position.y, -2.7f,4.5f), 0);
     }
 
     void PlayerLaser() 
