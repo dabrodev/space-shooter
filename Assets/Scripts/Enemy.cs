@@ -58,7 +58,6 @@ public class Enemy : MonoBehaviour
             if (_player != null)
             {
                 _player.CalculateScore(10);
-               
             }
             _onEnemyDestroy.SetTrigger("EnemyExplosion");
             _speed = 0;
