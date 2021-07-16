@@ -79,7 +79,6 @@ public class Player : MonoBehaviour
 
         transform.Translate(direction * _speed * Time.deltaTime);
     }
-
  
     void PlayerTeleport() 
     {
@@ -97,6 +96,7 @@ public class Player : MonoBehaviour
             transform.position = new Vector3(transform.position.x, 6.5f, 0);
         }
     }
+
     void RestrictMovement() 
     {   
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -7.6f,7.6f), Mathf.Clamp(transform.position.y, -2.7f,4.5f), 0);
