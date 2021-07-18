@@ -32,8 +32,6 @@ public class Player : MonoBehaviour
     private int _score;
     private UIManager _uiManager;
     private GameManager _gameManager;
-    [SerializeField]
-    private AudioClip _laserSound;
     private AudioSource _audioSource;
 
 
@@ -70,10 +68,6 @@ public class Player : MonoBehaviour
         if (_audioSource == null)
         {
             Debug.Log("The AudioSource is NULL!");
-        }
-        else
-        {
-            _audioSource.clip = _laserSound;
         }
     }
 

@@ -8,7 +8,8 @@ public class Powerup : MonoBehaviour
     private float _speed = 3;
     [SerializeField]
     private int powerupID;
- 
+    [SerializeField]
+    private AudioClip _powerupSound;
 
     void Update()
     {
@@ -25,8 +26,9 @@ public class Powerup : MonoBehaviour
         {
 
             Player player = collision.transform.GetComponent<Player>();
+            AudioSource.PlayClipAtPoint(_powerupSound, transform.position);
 
-                switch (powerupID)
+            switch (powerupID)
                 {
                     case 0:
                         player.TripleShotActive();
@@ -44,7 +46,7 @@ public class Powerup : MonoBehaviour
                         break;
                 }
 
-            Destroy(this.gameObject, 1.0f);
+            Destroy(this.gameObject);
         }
     }
 }
