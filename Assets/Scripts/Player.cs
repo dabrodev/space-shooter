@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float _speed = 3.0f;
     [SerializeField]
-    private float _speedUp = 3.0f;
+    private float _speedUp = 2.0f;
     [SerializeField]
     private GameObject _laserPrefab;
     [SerializeField]
@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private AudioClip _laserSound;
     private AudioSource _audioSource;
+
 
     void Start()
     {

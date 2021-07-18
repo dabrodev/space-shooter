@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private float _speed = 4.0f;
     private Player _player;
     private Animator _onEnemyDestroy;
+    private AudioSource _audioSource;
 
     private void Start()
     {
@@ -24,6 +25,8 @@ public class Enemy : MonoBehaviour
         {
             Debug.LogError("The animator is NULL");
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -49,6 +52,7 @@ public class Enemy : MonoBehaviour
             }
             _onEnemyDestroy.SetTrigger("EnemyExplosion");
             _speed = 0;
+            _audioSource.Play();
             Destroy(this.gameObject, 2.8f);
         }
 
@@ -61,6 +65,7 @@ public class Enemy : MonoBehaviour
             }
             _onEnemyDestroy.SetTrigger("EnemyExplosion");
             _speed = 0;
+            _audioSource.Play();
             Destroy(this.gameObject, 2.8f);
         }
     }

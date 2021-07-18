@@ -8,6 +8,7 @@ public class Powerup : MonoBehaviour
     private float _speed = 3;
     [SerializeField]
     private int powerupID;
+ 
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class Powerup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+
             Player player = collision.transform.GetComponent<Player>();
 
                 switch (powerupID)
@@ -42,7 +44,7 @@ public class Powerup : MonoBehaviour
                         break;
                 }
 
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 1.0f);
         }
     }
 }
