@@ -24,8 +24,8 @@ public class Powerup : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-
             Player player = collision.transform.GetComponent<Player>();
+
             AudioSource.PlayClipAtPoint(_powerupSound, transform.position);
 
             switch (powerupID)
