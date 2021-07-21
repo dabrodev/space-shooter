@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         RestartGame();
+        QuitApp();
     }
 
     public void RestartGame()
@@ -28,5 +29,13 @@ public class GameManager : MonoBehaviour
     public void SetGameOver()
     {
         _isGameOver = true;
+    }
+
+    public void QuitApp()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 }
