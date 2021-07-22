@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
         PlayerMovement();
         RestrictMovement();
         PlayerLaser();
+        Thrusters();
     }
 
     void PlayerMovement() 
@@ -216,4 +217,16 @@ public class Player : MonoBehaviour
         _score += points;
         _uiManager.UpdateScore(_score);
     }
+
+    public void Thrusters()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _speed *= (_speedUp); 
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _speed = 3.0f;
+        }
+    }    
 }
