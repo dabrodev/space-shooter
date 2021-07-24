@@ -35,7 +35,6 @@ public class Enemy : MonoBehaviour
 
     }
 
-
     void Update()
     {
         CalculateMovement();
