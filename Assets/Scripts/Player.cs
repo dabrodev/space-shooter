@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _damageLEngine;
     [SerializeField]
-    private Vector3 _laserOffset = new Vector3(0,1.05f,0);
+    private Vector3 _laserOffset = new Vector3(0,3,0);
     [SerializeField]
     private float _fireRate = 0.15f;
     private float _nextFire = -1.0f;
@@ -33,6 +33,9 @@ public class Player : MonoBehaviour
     private UIManager _uiManager;
     private GameManager _gameManager;
     private AudioSource _audioSource;
+    [SerializeField]
+    private GameObject _shieldBar;
+    private int _shieldPower = 3;
 
 
     void Start()
@@ -122,7 +125,8 @@ public class Player : MonoBehaviour
                 Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
             } else
             {
-                Instantiate(_laserPrefab, transform.position + _laserOffset, Quaternion.identity);
+                Instantiate(_laserPrefab, transform.position + new Vector3(0,1.5f,0), Quaternion.identity);
+              
             }
 
             _audioSource.Play();
@@ -138,8 +142,16 @@ public class Player : MonoBehaviour
 
         if (_isShieldPowerupActive == true)
         {
-            _isShieldPowerupActive = false;
-            _shieldCloud.SetActive(false);
+            _shieldPower -= 1;
+            _uiManager.UpdateShieldBar();
+
+            if (_shieldPower < 1)
+            {
+                _isShieldPowerupActive = false;
+                _shieldCloud.SetActive(false);
+                _shieldBar.SetActive(false);
+
+            }
             return;
         }
 
@@ -187,6 +199,8 @@ public class Player : MonoBehaviour
     {
         _isShieldPowerupActive = true;
         _shieldCloud.SetActive(true);
+        _shieldBar.gameObject.SetActive(true);
+        
 
         // StartCoroutine(ShieldPowerupCoroutine());
         // Limited Time Shield

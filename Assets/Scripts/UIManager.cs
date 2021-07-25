@@ -18,17 +18,25 @@ public class UIManager : MonoBehaviour
     private Sprite[] _liveSprites;
     private bool _gamePlay = true;
     private bool _switcher;
+    [SerializeField]
+    private Scrollbar _shieldBar;
 
     void Start()
     {
         _scoreText.text = "Score: " + 0;
         _gameOver.gameObject.SetActive(false);
         _restartGame.gameObject.SetActive(false);
+        _shieldBar.gameObject.SetActive(false);
     }
 
     public void UpdateScore(int playerScore)
     {
         _scoreText.text = "Score: " + playerScore.ToString();
+    }
+
+    public void UpdateShieldBar()
+    {
+        _shieldBar.size -= 0.33f; 
     }
 
     public void UpdateLives(int currentLives)
