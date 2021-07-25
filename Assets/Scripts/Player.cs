@@ -150,7 +150,6 @@ public class Player : MonoBehaviour
                 _isShieldPowerupActive = false;
                 _shieldCloud.SetActive(false);
                 _shieldBar.SetActive(false);
-
             }
             return;
         }
@@ -200,6 +199,8 @@ public class Player : MonoBehaviour
         _isShieldPowerupActive = true;
         _shieldCloud.SetActive(true);
         _shieldBar.gameObject.SetActive(true);
+        _uiManager.SetShieldBar();
+        _shieldPower = 3;
         
 
         // StartCoroutine(ShieldPowerupCoroutine());

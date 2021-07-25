@@ -27,6 +27,7 @@ public class UIManager : MonoBehaviour
         _gameOver.gameObject.SetActive(false);
         _restartGame.gameObject.SetActive(false);
         _shieldBar.gameObject.SetActive(false);
+        _shieldBar.size = 1;
     }
 
     public void UpdateScore(int playerScore)
@@ -38,6 +39,12 @@ public class UIManager : MonoBehaviour
     {
         _shieldBar.size -= 0.33f; 
     }
+
+    public void SetShieldBar()
+    {
+        _shieldBar.size = 1;
+    }
+        
 
     public void UpdateLives(int currentLives)
     {

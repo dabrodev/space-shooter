@@ -27,7 +27,7 @@ public class SpawnManager : MonoBehaviour
 
         while (_stopSpawning == false)
         {
-            float randomX = Random.Range(-9.5f, 9.5f);
+            float randomX = Random.Range(-7.7f, 7.7f);
             Vector3 posToSpawn = new Vector3(randomX, 7, 0);
             GameObject newEnemy = Instantiate(_enemyPrefab, posToSpawn, Quaternion.identity);
             newEnemy.transform.parent = _enemyContainer.transform;
@@ -42,7 +42,7 @@ public class SpawnManager : MonoBehaviour
         while (_stopSpawning == false)
         {
             float randomFreq = Random.Range(3.0f, 8.0f);
-            float randomX = Random.Range(-9.5f, 9.5f);
+            float randomX = Random.Range(-7.7f, 7.7f);
             Vector3 posToSpawn = new Vector3(randomX, 7, 0);
             int randomPowerup = Random.Range(0, 3);
             GameObject newPowerup = Instantiate(_powerups[randomPowerup], posToSpawn, Quaternion.identity);
