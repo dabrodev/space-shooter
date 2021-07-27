@@ -125,10 +125,8 @@ public class Player : MonoBehaviour
                 Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
             } else
             {
-                Instantiate(_laserPrefab, transform.position + new Vector3(0,1.5f,0), Quaternion.identity);
-              
+                Instantiate(_laserPrefab, transform.position + new Vector3(0,1.5f,0), Quaternion.identity); 
             }
-
             _audioSource.Play();
         }
     }
@@ -202,7 +200,6 @@ public class Player : MonoBehaviour
         _uiManager.SetShieldBar();
         _shieldPower = 3;
         
-
         // StartCoroutine(ShieldPowerupCoroutine());
         // Limited Time Shield
     }

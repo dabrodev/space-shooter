@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
         }
 
         _audioSource = GetComponent<AudioSource>();
-
     }
 
     void Update()
