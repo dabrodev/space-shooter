@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject _shieldBar;
     private int _shieldPower = 3;
+    private int ammoCount = 15;
 
 
     void Start()
@@ -123,13 +124,17 @@ public class Player : MonoBehaviour
             if (_isTripleShotActive == true)
             {
                 Instantiate(_tripleShotPrefab, transform.position, Quaternion.identity);
-            } else
-            {
-                Instantiate(_laserPrefab, transform.position + new Vector3(0,1.5f,0), Quaternion.identity); 
             }
-            _audioSource.Play();
+            else if ( ammoCount > 0)
+            {
+                Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
+                ammoCount--;
+                _uiManager.UpdateAmmo(ammoCount);
+            }       
         }
+        _audioSource.Play();
     }
+    
 
     public void Damage()
     {

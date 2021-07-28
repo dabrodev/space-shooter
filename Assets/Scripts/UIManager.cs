@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     private bool _switcher;
     [SerializeField]
     private Scrollbar _shieldBar;
+    [SerializeField]
+    private Text _ammoText;
 
     void Start()
     {
@@ -33,6 +35,11 @@ public class UIManager : MonoBehaviour
     public void UpdateScore(int playerScore)
     {
         _scoreText.text = "Score: " + playerScore.ToString();
+    }
+
+    public void UpdateAmmo(int ammoCount)
+    {
+        _ammoText.text = "Ammo: " + ammoCount.ToString();
     }
 
     public void UpdateShieldBar()
