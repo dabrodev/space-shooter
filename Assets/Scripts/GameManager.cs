@@ -7,11 +7,6 @@ public class GameManager : MonoBehaviour
 {
     private bool _isGameOver;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         RestartGame();

@@ -44,7 +44,7 @@ public class UIManager : MonoBehaviour
     {
         _shieldBar.size = 1;
     }
-        
+    
     public void UpdateLives(int currentLives)
     {
         _livesImg.sprite = _liveSprites[currentLives];
