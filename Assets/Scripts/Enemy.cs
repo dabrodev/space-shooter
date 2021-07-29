@@ -53,7 +53,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
     void CalculateMovement()
     {
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
@@ -75,22 +74,27 @@ public class Enemy : MonoBehaviour
             {
                 player.Damage();
             }
+
             _onEnemyDestroy.SetTrigger("EnemyExplosion");
             _speed = 0;
             _audioSource.Play();
+
             Destroy(this.gameObject, 2.8f);
         }
 
         if (other.tag == "Laser")
         {
             Destroy(other.gameObject);
+
             if (_player != null)
             {
                 _player.CalculateScore(10);
             }
+
             _onEnemyDestroy.SetTrigger("EnemyExplosion");
             _speed = 0;
             _audioSource.Play();
+
             Destroy(GetComponent<Collider2D>());
             Destroy(this.gameObject, 2.8f);
         }
