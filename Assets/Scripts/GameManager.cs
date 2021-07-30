@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void QuitApp()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
