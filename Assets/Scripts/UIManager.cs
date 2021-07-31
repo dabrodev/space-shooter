@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
     public void DisplayGameOver()
     {
         _gamePlay = false;
+
         StartCoroutine(GameOverFlicker());
         _restartGame.gameObject.SetActive(true);
     }
