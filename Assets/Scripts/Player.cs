@@ -130,9 +130,10 @@ public class Player : MonoBehaviour
                 Instantiate(_laserPrefab, transform.position + new Vector3(0, 1.5f, 0), Quaternion.identity);
                 ammoCount--;
                 _uiManager.UpdateAmmo(ammoCount);
-            }       
+            }
+            _audioSource.Play();
         }
-        _audioSource.Play();
+        
     }
     
 
