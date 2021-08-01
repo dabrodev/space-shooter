@@ -210,6 +210,12 @@ public class Player : MonoBehaviour
         // Limited Time Shield
     }
 
+    public void AmmoPowerupActive()
+    {
+        ammoCount = 15;
+        _uiManager.UpdateAmmo(ammoCount);
+    }
+
     IEnumerator TripleShotPowerdownCoroutine()
     {
         yield return new WaitForSeconds(5.0f);
